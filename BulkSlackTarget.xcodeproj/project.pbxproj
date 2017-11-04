@@ -18,6 +18,7 @@
 		4B74B1271FAE4B9500F4788C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B74B12E1FAE4BD200F4788C /* SlackTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackTarget.swift; sourceTree = "<group>"; };
 		4B74B1301FAE4C0200F4788C /* Bulk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bulk.framework; path = Carthage/Build/iOS/Bulk.framework; sourceTree = "<group>"; };
+		4BF595B11FAE511800487CF3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +36,7 @@
 		4B74B1191FAE4B9500F4788C = {
 			isa = PBXGroup;
 			children = (
+				4BF595B11FAE511800487CF3 /* README.md */,
 				4B74B1301FAE4C0200F4788C /* Bulk.framework */,
 				4B74B1251FAE4B9500F4788C /* BulkSlackTarget */,
 				4B74B1241FAE4B9500F4788C /* Products */,
