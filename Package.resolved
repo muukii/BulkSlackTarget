@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Bulk",
+        "repositoryURL": "https://github.com/muukii/Bulk.git",
+        "state": {
+          "branch": null,
+          "revision": "c101da166ef669300d83537ec3a0df89fc408e22",
+          "version": "0.4.3"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

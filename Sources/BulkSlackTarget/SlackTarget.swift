@@ -40,10 +40,16 @@ public final class SlackTarget : Bulk.Target {
 
   private let incomingWebhookURLString: String
   private let username: String
+  private let channelIdentifier: String?
 
-  public init(incomingWebhookURLString: String, username: String) {
+  public init(
+    incomingWebhookURLString: String,
+    username: String,
+    channelIdentifier: String? = nil
+  ) {
     self.incomingWebhookURLString = incomingWebhookURLString
     self.username = username
+    self.channelIdentifier = channelIdentifier
   }
 
   public func write(formatted items: [Bulk.Log], completion: @escaping () -> Void) {
@@ -69,18 +75,25 @@ public final class SlackTarget : Bulk.Target {
         case .error: return "error"
         }
       }
+      
+      let name: String
+      #if os(iOS)
+        name = UIDevice.current.name
+      #else
+        name = Host.current().name ?? "Unknown"
+      #endif
 
       return SlackMessage.Attachment(
         color: color,
         text: log.body,
-        footer: "\(UIDevice.current.name) | \(log.file):\(log.line.description) \(log.function)",
+        footer: "\(name) | \(log.file):\(log.line.description) \(log.function)",
         ts: log.date.timeIntervalSince1970,
         fields: [
         ])
     }
 
     let m = SlackMessage.init(
-      channel: nil,
+      channel: channelIdentifier,
       text: "",
       as_user: true,
       parse: "full",
@@ -98,7 +111,7 @@ public final class SlackTarget : Bulk.Target {
     SlackTarget.send(message: message, to: incomingWebhookURLString, completion: completion)
   }
 
-  private static func send(message: SlackMessage, to urlString: String, completion: @escaping () -> Void) {
+  public static func send(message: SlackMessage, to urlString: String, completion: @escaping () -> Void) {
 
     let sessionConfig = URLSessionConfiguration.default
     let session = URLSession(configuration: sessionConfig, delegate: nil, delegateQueue: nil)
@@ -123,16 +136,16 @@ public final class SlackTarget : Bulk.Target {
 
 extension SlackTarget {
 
-  private struct SlackMessage : Codable {
+  public struct SlackMessage : Codable {
 
-    struct Attachment : Codable {
+    public struct Attachment : Codable {
 
-      struct Field : Codable {
-        let title: String
-        let value: String
-        let short: Bool
+      public struct Field : Codable {
+        public var title: String
+        public var value: String
+        public var short: Bool
 
-        init(
+        public init(
           title: String,
           value: String,
           short: Bool
@@ -143,21 +156,21 @@ extension SlackTarget {
         }
       }
 
-      let color: String
-      let pretext: String
-      let author_name: String
-      let author_icon: String
-      let title: String
-      let title_link: String
-      let text: String
-      let fields: [Field]
-      let image_url: String
-      let thumb_url: String
-      let footer: String
-      let footer_icon: String
-      let ts: Double?
+      public var color: String
+      public var pretext: String
+      public var author_name: String
+      public var author_icon: String
+      public var title: String
+      public var title_link: String
+      public var text: String
+      public var fields: [Field]
+      public var image_url: String
+      public var thumb_url: String
+      public var footer: String
+      public var footer_icon: String
+      public var ts: Double?
 
-      init(
+      public init(
         color: String = "",
         pretext: String = "",
         authorName: String = "",
@@ -189,11 +202,11 @@ extension SlackTarget {
       }
     }
 
-    var channel: String?
-    let text: String?
-    let as_user: Bool
-    let parse: String
-    let username: String
-    let attachments: [Attachment]?
+    public var channel: String?
+    public var text: String?
+    public var as_user: Bool
+    public var parse: String
+    public var username: String
+    public var attachments: [Attachment]?
   }
 }

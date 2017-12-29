@@ -7,17 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4B74B1281FAE4B9500F4788C /* BulkSlackTarget.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B74B1261FAE4B9500F4788C /* BulkSlackTarget.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4B74B12F1FAE4BD200F4788C /* SlackTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74B12E1FAE4BD200F4788C /* SlackTarget.swift */; };
 		4B74B1311FAE4C0200F4788C /* Bulk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B74B1301FAE4C0200F4788C /* Bulk.framework */; };
+		4B763E8B1FF6F2B700ADD639 /* SlackTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B763E881FF6F2B700ADD639 /* SlackTarget.swift */; };
+		4B763E8C1FF6F2B700ADD639 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B763E891FF6F2B700ADD639 /* Info.plist */; };
+		4B763E8D1FF6F2B700ADD639 /* BulkSlackTarget.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B763E8A1FF6F2B700ADD639 /* BulkSlackTarget.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4B74B1231FAE4B9500F4788C /* BulkSlackTarget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BulkSlackTarget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4B74B1261FAE4B9500F4788C /* BulkSlackTarget.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BulkSlackTarget.h; sourceTree = "<group>"; };
-		4B74B1271FAE4B9500F4788C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4B74B12E1FAE4BD200F4788C /* SlackTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackTarget.swift; sourceTree = "<group>"; };
 		4B74B1301FAE4C0200F4788C /* Bulk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bulk.framework; path = Carthage/Build/iOS/Bulk.framework; sourceTree = "<group>"; };
+		4B763E881FF6F2B700ADD639 /* SlackTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlackTarget.swift; sourceTree = "<group>"; };
+		4B763E891FF6F2B700ADD639 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4B763E8A1FF6F2B700ADD639 /* BulkSlackTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BulkSlackTarget.h; sourceTree = "<group>"; };
 		4BF595B11FAE511800487CF3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -38,7 +39,7 @@
 			children = (
 				4BF595B11FAE511800487CF3 /* README.md */,
 				4B74B1301FAE4C0200F4788C /* Bulk.framework */,
-				4B74B1251FAE4B9500F4788C /* BulkSlackTarget */,
+				4B763E861FF6F2B700ADD639 /* Sources */,
 				4B74B1241FAE4B9500F4788C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,12 +52,20 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4B74B1251FAE4B9500F4788C /* BulkSlackTarget */ = {
+		4B763E861FF6F2B700ADD639 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				4B74B1261FAE4B9500F4788C /* BulkSlackTarget.h */,
-				4B74B12E1FAE4BD200F4788C /* SlackTarget.swift */,
-				4B74B1271FAE4B9500F4788C /* Info.plist */,
+				4B763E871FF6F2B700ADD639 /* BulkSlackTarget */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		4B763E871FF6F2B700ADD639 /* BulkSlackTarget */ = {
+			isa = PBXGroup;
+			children = (
+				4B763E881FF6F2B700ADD639 /* SlackTarget.swift */,
+				4B763E891FF6F2B700ADD639 /* Info.plist */,
+				4B763E8A1FF6F2B700ADD639 /* BulkSlackTarget.h */,
 			);
 			path = BulkSlackTarget;
 			sourceTree = "<group>";
@@ -68,7 +77,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B74B1281FAE4B9500F4788C /* BulkSlackTarget.h in Headers */,
+				4B763E8D1FF6F2B700ADD639 /* BulkSlackTarget.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +140,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B763E8C1FF6F2B700ADD639 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,7 +151,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B74B12F1FAE4BD200F4788C /* SlackTarget.swift in Sources */,
+				4B763E8B1FF6F2B700ADD639 /* SlackTarget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,7 +285,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = BulkSlackTarget/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/BulkSlackTarget/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.muukii.BulkSlackTarget;
@@ -301,7 +311,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = BulkSlackTarget/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/BulkSlackTarget/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.muukii.BulkSlackTarget;
