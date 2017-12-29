@@ -208,5 +208,22 @@ extension SlackTarget {
     public var parse: String
     public var username: String
     public var attachments: [Attachment]?
+    
+    public init(
+      channel: String? = nil,
+      text: String? = nil,
+      as_user: Bool = false,
+      parse: String = "full",
+      username: String,
+      attachments: [Attachment]? = nil
+    ) {
+      
+      self.channel = channel
+      self.text = text
+      self.as_user = as_user
+      self.username = username
+      self.parse = parse
+      self.attachments = attachments
+    }
   }
 }
