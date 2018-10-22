@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		4B74B1311FAE4C0200F4788C /* Bulk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B74B1301FAE4C0200F4788C /* Bulk.framework */; };
 		4B763E8B1FF6F2B700ADD639 /* SlackTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B763E881FF6F2B700ADD639 /* SlackTarget.swift */; };
-		4B763E8C1FF6F2B700ADD639 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B763E891FF6F2B700ADD639 /* Info.plist */; };
 		4B763E8D1FF6F2B700ADD639 /* BulkSlackTarget.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B763E8A1FF6F2B700ADD639 /* BulkSlackTarget.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -140,7 +139,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B763E8C1FF6F2B700ADD639 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
